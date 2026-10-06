@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAMI HOOD | Driving Empire Luxury Rentals & Insurance</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            100: '#FFF7D6',
+                            200: '#FFECA1',
+                            300: '#FFDF6C',
+                            400: '#FFD237',
+                            500: '#D4AF37', // Metallic gold
+                            600: '#AA8518',
+                            700: '#805E07',
+                            800: '#553C00',
+                            900: '#2B1E00',
+                        },
+                        dark: {
+                            base: '#08080A',
+                            card: '#111116',
+                            hover: '#181820',
+                            border: '#262633'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-border-glow {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+        }
+        .gold-border-glow:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+            border: 1px solid rgba(212, 175, 55, 0.8);
+        }
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #FFF7D6 0%, #D4AF37 50%, #997412 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-bg-gradient {
+            background: linear-gradient(135deg, #FFECA1 0%, #D4AF37 50%, #AA8518 100%);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #08080A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #332B13;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-dark-base text-gray-200 font-sans antialiased selection:bg-gold-500 selection:text-black min-h-screen flex flex-col">
+
+    <nav class="sticky top-0 z-50 bg-dark-base/90 backdrop-blur-md border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 rounded-full border-2 border-gold-500 bg-black flex items-center justify-center p-1 group-hover:scale-105 transition-transform duration-300 shadow-md shadow-gold-500/20">
+                        <div class="w-full h-full rounded-full border border-gold-400/40 bg-dark-card flex items-center justify-center">
+                            <i data-lucide="crown" class="w-6 h-6 text-gold-400"></i>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-heading font-black text-xl tracking-wider gold-text-gradient leading-none">RAMI HOOD</span>
+                        <span class="text-[10px] uppercase tracking-widest text-gold-400 font-bold mt-1">Driving Empire Roblox</span>
+                    </div>
+                </a>
+
+                <!-- Nav Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#fleet" class="text-sm font-semibold hover:text-gold-400 transition-colors">DE Rental Fleet</a>
+                    <a href="#houses" class="text-sm font-semibold hover:text-gold-400 transition-colors">DE Rental Houses</a>
+                    <a href="#services" class="text-sm font-semibold hover:text-gold-400 transition-colors">Insurance Services</a>
+                    <a href="#calculator" class="text-sm font-semibold hover:text-gold-400 transition-colors">Quote Estimator</a>
+                    <a href="#tiktok" class="text-sm font-bold text-gold-300 hover:text-gold-100 flex items-center gap-1.5 bg-gold-500/10 px-3 py-1.5 rounded-full border border-gold-500/30">
+                        <i data-lucide="video" class="w-4 h-4"></i> TikTok @ramihood1
+                    </a>
+                    <a href="#booking" class="px-5 py-2.5 rounded-full text-xs uppercase tracking-wider font-extrabold bg-gold-bg-gradient text-black hover:opacity-95 transition-all shadow-lg shadow-gold-500/20 flex items-center gap-2">
+                        <i data-lucide="car" class="w-4 h-4"></i> Rent / Insure
+                    </a>
+                </div>
+
+                <!-- Mobile Navigation Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-gold-400 hover:bg-dark-hover transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-b border-gold-500/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#fleet" class="block py-2 text-sm font-semibold text-gray-200">DE Rental Fleet</a>
+            <a href="#houses" class="block py-2 text-sm font-semibold text-gray-200">DE Rental Houses</a>
+            <a href="#services" class="block py-2 text-sm font-semibold text-gray-200">Insurance Services</a>
+            <a href="#calculator" class="block py-2 text-sm font-semibold text-gray-200">Quote Estimator</a>
+            <a href="#tiktok" class="block py-2 text-sm font-bold text-gold-400">TikTok: @ramihood1</a>
+            <a href="#booking" class="block w-full text-center py-3 rounded-xl text-xs uppercase tracking-wider font-extrabold bg-gold-bg-gradient text-black">Rent / Insure</a>
+        </div>
+    </nav>
+
+    <section id="home" class="relative py-20 overflow-hidden bg-radial from-gold-900/20 via-dark-base to-dark-base border-b border-gold-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Hero Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/40 text-gold-400 text-xs font-bold uppercase tracking-wider">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Exclusively For Roblox Driving Empire</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight leading-none text-white">
+                        EVERYTHING NEEDED FOR LIVING <span class="gold-text-gradient block mt-2">DRIVING EMPIRE EDITION</span>
+                    </h1>
+
+                    <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Rent official matching Driving Empire supercars and luxury mansions, backed by 100% "Insured For Everything" coverage.
+                    </p>
+
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#fleet" class="w-full sm:w-auto px-8 py-4 rounded-xl text-xs uppercase tracking-widest font-extrabold bg-gold-bg-gradient text-black hover:opacity-90 transition-all shadow-xl shadow-gold-500/20 text-center flex items-center justify-center gap-2">
+                            <i data-lucide="key" class="w-4 h-4"></i> Explore Matching Fleet
+                        </a>
+                        <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-xl text-xs uppercase tracking-widest font-extrabold border border-gold-500/50 text-gold-300 hover:bg-gold-500/10 transition-all text-center flex items-center justify-center gap-2">
+                            <i data-lucide="shield-check" class="w-4 h-4"></i> Insured For Everything
+                        </a>
+                    </div>
+
+                    <!-- Quick Badge Stats -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-gray-800/80 text-center lg:text-left">
+                        <div>
+                            <div class="text-2xl font-black text-white font-heading">8 CARS</div>
+                            <div class="text-xs text-gray-500 font-medium">Matching DE Visuals</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-black text-gold-400 font-heading">100% FULL</div>
+                            <div class="text-xs text-gray-500 font-medium">Cars & Mansions Insured</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-black text-white font-heading">@ramihood1</div>
+                            <div class="text-xs text-gray-500 font-medium">TikTok Channel</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right RAMI HOOD Emblem Badge -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-80 h-80 sm:w-96 sm:h-96 rounded-full border-4 border-gold-500/40 bg-dark-card flex items-center justify-center p-6 shadow-2xl shadow-gold-500/20 gold-border-glow">
+                        <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-dark-base px-6 py-1.5 rounded-full border border-gold-500 text-gold-400 flex items-center gap-2 shadow-lg">
+                            <i data-lucide="crown" class="w-5 h-5 text-gold-400"></i>
+                            <span class="font-heading font-black text-xs tracking-widest">DRIVING EMPIRE</span>
+                        </div>
+
+                        <div class="w-full h-full rounded-full border-2 border-gold-500/30 bg-black/80 flex flex-col items-center justify-center text-center p-6 space-y-3">
+                            <i data-lucide="car" class="w-12 h-12 text-gold-400"></i>
+                            <h2 class="font-heading text-3xl font-black gold-text-gradient tracking-wide">RAMI HOOD</h2>
+                            <p class="text-[10px] uppercase tracking-widest text-gold-300 font-bold border-t border-b border-gold-500/30 py-1 px-4">
+                                NO PLUMBING • 100% DRIVING EMPIRE
+                            </p>
+                            <p class="text-xs text-gray-400 italic">"Everything Needed For Living"</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="fleet" class="py-20 bg-dark-base relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-gold-400">Driving Empire Vehicles</span>
+                <h2 class="text-3xl sm:text-5xl font-heading font-black text-white mt-2">MATCHING RENTAL FLEET</h2>
+                <div class="w-20 h-1 bg-gold-bg-gradient mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-400 text-xs sm:text-sm mt-4">
+                    Every car below displays its official matching badge, vehicle render visual, and exact Driving Empire name!
+                </p>
+            </div>
+
+            <!-- Fleet Grid populated dynamically with exact vehicle imagery & matching badges -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="fleet-grid">
+                <!-- Javascript populates 8 matching vehicles here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="houses" class="py-20 bg-dark-card border-t border-b border-gold-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-gold-400">Driving Empire Estates</span>
+                <h2 class="text-3xl sm:text-5xl font-heading font-black text-white mt-2">DE RENTAL HOUSES & MANSIONS</h2>
+                <div class="w-20 h-1 bg-gold-bg-gradient mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-400 text-xs sm:text-sm mt-4">
+                    Rent premium Driving Empire luxury estates with multi-car showcase garages for car meets and squad hangouts.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="houses-grid">
+                <!-- Javascript populates DE houses here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-dark-base">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-gold-400">Driving Empire Protection</span>
+                <h2 class="text-3xl sm:text-4xl font-heading font-black text-white mt-2">INSURED FOR EVERYTHING</h2>
+                <p class="text-gold-400 text-xs font-bold uppercase tracking-widest mt-1">100% Full Comprehensive Protection for Cars & Mansions</p>
+                <div class="w-20 h-1 bg-gold-bg-gradient mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1: Vehicle Insurance -->
+                <div class="bg-dark-card rounded-2xl p-8 border border-gold-500/20 hover:border-gold-500/60 transition-all duration-300 hover:-translate-y-1 shadow-xl gold-border-glow group">
+                    <div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="shield-check" class="w-8 h-8"></i>
+                    </div>
+                    <div class="inline-block px-3 py-1 bg-gold-500/10 border border-gold-500/30 rounded-full text-[10px] font-extrabold text-gold-400 uppercase tracking-widest mb-3">Insured For Everything</div>
+                    <h3 class="text-xl font-heading font-black text-white mb-3">RAMI CAR INSURANCE</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-6">
+                        Complete 100% coverage for hypercar total-loss crashes, engine blowouts, custom modification replacement, vandalism & unlimited highway towing in Driving Empire.
+                    </p>
+                    <ul class="text-xs space-y-2 text-gray-300 border-t border-gray-800 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400"></i> Total Collision & Full Car Replacement</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400"></i> Custom Tuning, Rims & Performance Parts</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400"></i> Unlimited Driving Empire Highway Towing</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: House Insurance -->
+                <div class="bg-dark-card rounded-2xl p-8 border border-gold-500/20 hover:border-gold-500/60 transition-all duration-300 hover:-translate-y-1 shadow-xl gold-border-glow group">
+                    <div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="home" class="w-8 h-8"></i>
+                    </div>
+                    <div class="inline-block px-3 py-1 bg-gold-500/10 border border-gold-500/30 rounded-full text-[10px] font-extrabold text-gold-400 uppercase tracking-widest mb-3">Insured For Everything</div>
+                    <h3 class="text-xl font-heading font-black text-white mb-3">RAMI HOUSE INSURANCE</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-6">
+                        Full 100% protection for Driving Empire mansions, villas, penthouse structures, garage equipment, fire, storm damage, break-ins & complete rebuild costs.
+                    </p>
+                    <ul class="text-xs space-y-2 text-gray-300 border-t border-gray-800 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400"></i> Full Structural Repair & Rebuild Costs</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400"></i> Showcase Multi-Car Garage Protection</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400"></i> Fire, Theft & Roleplay Disaster Coverage</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: Rami Rental -->
+                <div class="bg-dark-card rounded-2xl p-8 border border-gold-500/20 hover:border-gold-500/60 transition-all duration-300 hover:-translate-y-1 shadow-xl gold-border-glow group">
+                    <div class="w-14 h-14 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="key" class="w-8 h-8"></i>
+                    </div>
+                    <div class="inline-block px-3 py-1 bg-gold-500/10 border border-gold-500/30 rounded-full text-[10px] font-extrabold text-gold-400 uppercase tracking-widest mb-3">Cars & Mansions</div>
+                    <h3 class="text-xl font-heading font-black text-white mb-3">RAMI RENTAL FLEET</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-6">
+                        Rent supercar hypercars and luxury mansions directly in Driving Empire for car meets, roleplay filming, or high-speed cruises.
+                    </p>
+                    <ul class="text-xs space-y-2 text-gray-300 border-t border-gray-800 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400"></i> 8 Exact Matching Cars & Mansions</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400"></i> Flexible DE Cash Session Pricing</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400"></i> Instant Delivery & Server Meetup</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator" class="py-20 bg-dark-base">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-dark-card rounded-3xl p-8 sm:p-12 border border-gold-500/30 gold-border-glow">
+                <div class="text-center mb-10">
+                    <span class="text-xs font-bold uppercase tracking-widest text-gold-400">Driving Empire Estimator</span>
+                    <h2 class="text-3xl font-heading font-black text-white mt-1">INSURANCE & RENTAL CALCULATOR</h2>
+                    <p class="text-gray-400 text-xs mt-2">Estimate rates for matching vehicles and luxury DE mansions.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- Controls -->
+                    <div class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Service Type</label>
+                            <select id="calc-service" class="w-full bg-black/70 border border-gold-500/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-400">
+                                <option value="supercar">RAMI Car Insurance (Insured For Everything)</option>
+                                <option value="estate">RAMI House Insurance (Insured For Everything)</option>
+                                <option value="houserental">RAMI House Rental</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Vehicle / House Class</label>
+                            <select id="calc-tier" class="w-full bg-black/70 border border-gold-500/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-400">
+                                <option value="1">Standard Sport (Golf R / RS6 Avant / Suburban Estate)</option>
+                                <option value="2" selected>Supercar Tier (Lambo Urus / Range Rover / Audi R8 / Hillside Villa)</option>
+                                <option value="3">Hypercar Exotic Tier (SVJ / Revuelto / Pagani / Ocean Estate)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Coverage / Rental Term</label>
+                            <select id="calc-duration" class="w-full bg-black/70 border border-gold-500/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-400">
+                                <option value="1">1 Session Pass</option>
+                                <option value="7">1 Week DE Roleplay Shield</option>
+                                <option value="30">1 Month VIP Driving Empire Shield</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Output Card -->
+                    <div class="bg-black/90 rounded-2xl p-6 border border-gold-500/30 text-center space-y-4">
+                        <span class="text-xs text-gray-400 uppercase tracking-widest font-bold">Estimated In-Game Rate</span>
+                        <div id="calc-price" class="text-4xl font-black text-gold-400 font-heading">$15,000 <span class="text-xs text-gray-400 font-sans font-normal">DE Cash</span></div>
+                        <p id="calc-summary" class="text-xs text-gray-400 leading-relaxed px-2">
+                            100% Insured For Everything: Covers total crashes, engine blowouts, custom modifications & unlimited towing.
+                        </p>
+                        <a href="#booking" class="block w-full py-3 rounded-xl bg-gold-bg-gradient text-black font-extrabold text-xs uppercase tracking-wider hover:opacity-90 transition-all shadow-md shadow-gold-500/20">
+                            Book / Request Coverage
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tiktok" class="py-20 bg-dark-card border-t border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black border border-gold-500/40 text-gold-400 text-xs font-bold">
+                        <i data-lucide="video" class="w-4 h-4"></i> OFFICIAL TIKTOK CHANNEL
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-heading font-black text-white">TIKTOK @ramihood1</h2>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Watch high-speed highway pulls, Lambo SVJ rev battles, Pagani drag races, and Driving Empire roleplay videos exclusively on our TikTok channel.
+                    </p>
+
+                    <div class="p-4 rounded-xl bg-black/60 border border-gold-500/20 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gold-bg-gradient flex items-center justify-center text-black font-black text-xl font-heading">
+                            RH
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-base">@ramihood1</div>
+                            <div class="text-xs text-gold-400 font-semibold">Official RAMI HOOD Driving Empire Channel</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="https://www.tiktok.com/@ramihood1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gold-bg-gradient text-black font-extrabold text-xs uppercase tracking-widest hover:opacity-90 transition-all shadow-lg shadow-gold-500/20">
+                            <i data-lucide="external-link" class="w-4 h-4"></i> Open TikTok @ramihood1
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 flex justify-center">
+                    <div class="w-full max-w-sm bg-black rounded-3xl p-6 border-2 border-gold-500/40 gold-border-glow space-y-4">
+                        <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                            <div class="flex items-center gap-2 text-white font-bold text-sm">
+                                <i data-lucide="music" class="w-4 h-4 text-gold-400"></i> TikTok Content
+                            </div>
+                            <span class="text-[10px] text-emerald-400 font-bold px-2 py-0.5 bg-emerald-950 rounded border border-emerald-500/30">DE Creator</span>
+                        </div>
+
+                        <div class="h-64 rounded-2xl bg-dark-card border border-gold-500/20 flex flex-col items-center justify-center text-center p-6 space-y-3">
+                            <div class="w-16 h-16 rounded-full bg-gold-500/20 border border-gold-400/50 flex items-center justify-center text-gold-400">
+                                <i data-lucide="play" class="w-8 h-8 fill-gold-400"></i>
+                            </div>
+                            <div class="text-sm font-bold text-white">Lambo Revuelto vs Pagani Highway Drag</div>
+                            <div class="text-xs text-gray-400">Follow @ramihood1 on TikTok for Driving Empire updates</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-20 bg-dark-base relative">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-dark-card rounded-3xl p-8 sm:p-12 border border-gold-500/30 gold-border-glow">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold uppercase tracking-widest text-gold-400">Driving Empire RP</span>
+                    <h2 class="text-3xl font-heading font-black text-white mt-1">RAMI HOOD REQUEST FORM</h2>
+                    <p class="text-xs text-gray-400 mt-2">Book a vehicle from our matching 8-car fleet or submit an insurance order.</p>
+                </div>
+
+                <form id="rp-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-gold-300 uppercase tracking-wider mb-2">Roblox Username *</label>
+                            <input type="text" id="roblox-username" required placeholder="e.g. DE_Driver123" class="w-full bg-black/70 border border-gold-500/30 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-gold-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gold-300 uppercase tracking-wider mb-2">Discord / Contact Tag</label>
+                            <input type="text" id="discord-tag" placeholder="e.g. User#1234 or @username" class="w-full bg-black/70 border border-gold-500/30 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-gold-400">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-gold-300 uppercase tracking-wider mb-2">Requested Service *</label>
+                            <select id="requested-service" class="w-full bg-black/70 border border-gold-500/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-400">
+                                <option value="RAMI Rental Fleet">RAMI Rental (Supercar Fleet)</option>
+                                <option value="RAMI House Rentals">RAMI House Rentals (DE Estates & Mansions)</option>
+                                <option value="RAMI Car Insurance">RAMI Car Insurance (Insured For Everything)</option>
+                                <option value="RAMI House Insurance">RAMI House Insurance (Insured For Everything)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gold-300 uppercase tracking-wider mb-2">Select Exact Matching Car / Estate</label>
+                            <select id="selected-vehicle" class="w-full bg-black/70 border border-gold-500/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-400">
+                                <optgroup label="Matching Supercars & SUV Fleet">
+                                    <option value="Lamborghini Urus">Lamborghini Urus (Super SUV)</option>
+                                    <option value="Lamborghini Aventador SVJ">Lamborghini Aventador SVJ (V12 Flagship)</option>
+                                    <option value="Lamborghini Revuelto">Lamborghini Revuelto (Hybrid Hypercar)</option>
+                                    <option value="Range Rover">Range Rover (Luxury Executive SUV)</option>
+                                    <option value="Pagani">Pagani (Exotic Hypercar)</option>
+                                    <option value="Audi RS6 Avant">Audi RS6 Avant (Twin-Turbo V8 Wagon)</option>
+                                    <option value="Volkswagen Golf R">Volkswagen Golf R (Hot Hatch Cruiser)</option>
+                                    <option value="Audi R8">Audi R8 (V10 Performance Coupe)</option>
+                                </optgroup>
+                                <optgroup label="Driving Empire Houses & Mansions">
+                                    <option value="Apex Hillside Modern Villa">Apex Hillside Modern Villa</option>
+                                    <option value="Oceanfront Luxury Mansion">Oceanfront Luxury Mansion</option>
+                                    <option value="Downtown Penthouse & Sky Garage">Downtown Penthouse & Sky Garage</option>
+                                    <option value="Suburban VIP Garage Estate">Suburban VIP Garage Estate</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gold-300 uppercase tracking-wider mb-2">Meeting Spot & Notes</label>
+                        <textarea id="service-notes" rows="3" placeholder="Specify your meetup spot on the Driving Empire map, preferred rental duration, or custom color tuning..." class="w-full bg-black/70 border border-gold-500/30 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-gold-400"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gold-bg-gradient text-black font-extrabold text-xs uppercase tracking-widest hover:opacity-90 transition-all shadow-xl shadow-gold-500/20">
+                        Submit Order
+                    </button>
+                </form>
+
+                <div id="form-success-msg" class="hidden mt-6 p-4 rounded-xl bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-center text-xs">
+                    <i data-lucide="check-circle" class="w-6 h-6 mx-auto mb-2 text-emerald-400"></i>
+                    Your RAMI HOOD request has been submitted! Staff will connect with you on Driving Empire or Discord.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black border-t border-gold-500/20 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full border border-gold-400 bg-dark-card flex items-center justify-center">
+                        <i data-lucide="crown" class="w-4 h-4 text-gold-400"></i>
+                    </div>
+                    <span class="font-heading font-bold text-lg gold-text-gradient">RAMI HOOD</span>
+                </div>
+
+                <div class="text-xs text-gray-500 text-center">
+                    EVERYTHING NEEDED FOR LIVING • DRIVING EMPIRE ROBLOX • TIKTOK <a href="https://www.tiktok.com/@ramihood1" class="text-gold-400 underline">@ramihood1</a>
+                </div>
+
+                <div class="text-xs text-gray-600">
+                    © 2026 RAMI HOOD. Dedicated exclusively to Driving Empire in Roblox.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // 8 EXACT CARS WITH MATCHING VISUALS & EMBLAM BADGES
+        const fleetData = [
+            {
+                name: "Lamborghini Urus",
+                class: "Super SUV",
+                rate: "$12,000",
+                badge: "LAMBORGHINI URUS",
+                badgeColor: "bg-yellow-500 text-black",
+                img: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80",
+                desc: "High-performance twin-turbo V8 yellow luxury Super SUV."
+            },
+            {
+                name: "Lamborghini Aventador SVJ",
+                class: "V12 Flagship",
+                rate: "$25,000",
+                badge: "AVENTADOR SVJ",
+                badgeColor: "bg-emerald-500 text-black",
+                img: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=800&q=80",
+                desc: "6.5L naturally aspirated V12 flagship hypercar."
+            },
+            {
+                name: "Lamborghini Revuelto",
+                class: "Hybrid Hypercar",
+                rate: "$30,000",
+                badge: "LAMBORGHINI REVUELTO",
+                badgeColor: "bg-amber-500 text-black",
+                img: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80",
+                desc: "V12 hybrid hypercar with tri-motor electric acceleration."
+            },
+            {
+                name: "Range Rover",
+                class: "Executive Luxury SUV",
+                rate: "$10,000",
+                badge: "RANGE ROVER",
+                badgeColor: "bg-stone-200 text-black",
+                img: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=80",
+                desc: "Full-size executive SUV designed for luxury VIP roleplays."
+            },
+            {
+                name: "Pagani",
+                class: "Exotic Hypercar",
+                rate: "$35,000",
+                badge: "PAGANI HYPERCAR",
+                badgeColor: "bg-cyan-400 text-black",
+                img: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80",
+                desc: "Ultra-rare handcrafted AMG twin-turbo V12 hypercar."
+            },
+            {
+                name: "Audi RS6 Avant",
+                class: "Twin-Turbo V8 Wagon",
+                rate: "$14,000",
+                badge: "AUDI RS6 AVANT",
+                badgeColor: "bg-red-600 text-white",
+                img: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80",
+                desc: "High-octane twin-turbo V8 performance wagon."
+            },
+            {
+                name: "Volkswagen Golf R",
+                class: "Hot Hatch Cruiser",
+                rate: "$6,000",
+                badge: "VOLKSWAGEN GOLF R",
+                badgeColor: "bg-blue-600 text-white",
+                img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80",
+                desc: "AWD turbo hot hatch perfect for city street meets."
+            },
+            {
+                name: "Audi R8",
+                class: "V10 Performance Coupe",
+                rate: "$18,000",
+                badge: "AUDI R8 V10",
+                badgeColor: "bg-zinc-100 text-black",
+                img: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80",
+                desc: "Mid-engine 5.2L naturally aspirated V10 supercar."
+            }
+        ];
+
+        // Populate Fleet Cards with exact matching badges & titles
+        const fleetGrid = document.getElementById('fleet-grid');
+        fleetData.forEach((car) => {
+            const card = document.createElement('div');
+            card.className = "bg-dark-card rounded-2xl overflow-hidden border border-gold-500/20 hover:border-gold-500/60 transition-all flex flex-col justify-between gold-border-glow";
+            card.innerHTML = `
+                <div>
+                    <div class="h-48 bg-gray-900 relative overflow-hidden group">
+                        <img src="${car.img}" alt="${car.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md font-black text-[10px] uppercase tracking-wider shadow-lg ${car.badgeColor}">
+                            ${car.badge}
+                        </div>
+                        <div class="absolute bottom-2 right-2 px-2 py-0.5 bg-black/80 rounded text-[9px] font-bold text-gold-300 border border-gold-500/30">
+                            ${car.class}
+                        </div>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h3 class="font-heading font-black text-lg text-white">${car.name}</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">${car.desc}</p>
+                    </div>
+                </div>
+                <div class="p-5 border-t border-gray-800 flex items-center justify-between bg-black/40">
+                    <div>
+                        <span class="text-[10px] text-gray-500 block uppercase font-semibold">DE Rate / Session</span>
+                        <span class="text-gold-400 font-bold text-sm">${car.rate} DE Cash</span>
+                    </div>
+                    <button onclick="bookCar('${car.name}')" class="px-3.5 py-2 rounded-lg bg-gold-bg-gradient text-black text-xs font-extrabold hover:opacity-90 transition-opacity">
+                        Rent Vehicle
+                    </button>
+                </div>
+            `;
+            fleetGrid.appendChild(card);
+        });
+
+        // DE Houses Data
+        const housesData = [
+            {
+                name: "Apex Hillside Modern Villa",
+                class: "10-Car Showroom Villa",
+                rate: "$20,000",
+                img: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80",
+                desc: "Contemporary luxury hillside villa featuring a multi-car showroom garage."
+            },
+            {
+                name: "Oceanfront Luxury Mansion",
+                class: "Private Dock & Beach Mansion",
+                rate: "$35,000",
+                img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
+                desc: "Sprawling oceanfront estate with helicopter pad & underground supercar vault."
+            },
+            {
+                name: "Downtown Penthouse & Sky Garage",
+                class: "Urban High-Rise Penthouse",
+                rate: "$18,000",
+                img: "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&w=800&q=80",
+                desc: "High-tier downtown skyline penthouse featuring private drive-in car elevator."
+            },
+            {
+                name: "Suburban VIP Garage Estate",
+                class: "Suburban Custom Estate",
+                rate: "$12,000",
+                img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
+                desc: "Classic high-class suburban estate with spacious driveway & twin workshop bays."
+            }
+        ];
+
+        // Populate Houses Grid
+        const housesGrid = document.getElementById('houses-grid');
+        housesData.forEach((house) => {
+            const card = document.createElement('div');
+            card.className = "bg-dark-base rounded-2xl overflow-hidden border border-gold-500/20 hover:border-gold-500/60 transition-all flex flex-col justify-between gold-border-glow";
+            card.innerHTML = `
+                <div>
+                    <div class="h-44 bg-gray-900 relative overflow-hidden">
+                        <img src="${house.img}" alt="${house.name}" class="w-full h-full object-cover">
+                        <div class="absolute top-3 left-3 px-3 py-1 bg-black/80 rounded-full text-[10px] font-bold text-gold-400 border border-gold-500/30">
+                            ${house.class}
+                        </div>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h3 class="font-heading font-bold text-base text-white">${house.name}</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">${house.desc}</p>
+                    </div>
+                </div>
+                <div class="p-5 border-t border-gray-800 flex items-center justify-between bg-black/40">
+                    <div>
+                        <span class="text-[10px] text-gray-500 block uppercase">DE Rate / Session</span>
+                        <span class="text-gold-400 font-bold text-sm">${house.rate} DE Cash</span>
+                    </div>
+                    <button onclick="bookHouse('${house.name}')" class="px-3.5 py-2 rounded-lg bg-gold-bg-gradient text-black text-xs font-extrabold hover:opacity-90 transition-opacity">
+                        Rent House
+                    </button>
+                </div>
+            `;
+            housesGrid.appendChild(card);
+        });
+
+        // Booking Helpers
+        function bookCar(carName) {
+            document.getElementById('requested-service').value = 'RAMI Rental Fleet';
+            document.getElementById('selected-vehicle').value = carName;
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function bookHouse(houseName) {
+            document.getElementById('requested-service').value = 'RAMI House Rentals';
+            document.getElementById('selected-vehicle').value = houseName;
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Mobile Menu
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Estimator
+        const calcService = document.getElementById('calc-service');
+        const calcTier = document.getElementById('calc-tier');
+        const calcDuration = document.getElementById('calc-duration');
+        const calcPrice = document.getElementById('calc-price');
+        const calcSummary = document.getElementById('calc-summary');
+
+        function calculateQuote() {
+            const service = calcService.value;
+            const tier = parseInt(calcTier.value);
+            const duration = parseInt(calcDuration.value);
+
+            let basePrice = service === 'supercar' ? 8000 : service === 'estate' ? 12000 : 15000;
+            let durationMultiplier = duration === 1 ? 1 : duration === 7 ? 4.5 : 14;
+
+            let total = basePrice * tier * durationMultiplier;
+            calcPrice.innerHTML = `$${total.toLocaleString()} <span class="text-xs text-gray-400 font-sans font-normal">DE Cash</span>`;
+
+            if (service === 'supercar') {
+                calcSummary.innerText = '100% Insured For Everything: Covers total crashes, engine blowouts, custom modifications & towing.';
+            } else if (service === 'estate') {
+                calcSummary.innerText = '100% Insured For Everything: Full structural rebuilds, garage protection, fire, theft & storm coverage.';
+            } else {
+                calcSummary.innerText = 'Covers full session access to luxury DE mansion with multi-car showcase garages.';
+            }
+        }
+
+        calcService.addEventListener('change', calculateQuote);
+        calcTier.addEventListener('change', calculateQuote);
+        calcDuration.addEventListener('change', calculateQuote);
+        calculateQuote();
+
+        // Form Submission
+        const form = document.getElementById('rp-form');
+        const successMsg = document.getElementById('form-success-msg');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('roblox-username').value;
+            if(!username) return;
+
+            successMsg.classList.remove('hidden');
+            form.reset();
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 6000);
+        });
+    </script>
+</body>
+</html>
